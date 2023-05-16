@@ -13,9 +13,21 @@ import requests
 
 
 class EmprecacampinasSpider(scrapy.Spider):
-    name = "emprecacampinas"
+    
+    name = "empregacampinas"
     allowed_domains = ["empregacampinas.com.br"]
-    start_urls = ["https://empregacampinas.com.br"]
+
+    def start_requests(self):
+        url = "https://empregacampinas.com.br"
+        yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
-        pass
+        option = webdriver.ChromeOptions()
+        driver = webdriver.Chrome(ChromeDriverManager().install(), 
+                            options=option)
+        
+        driver.get('https://empregacampinas.com.br')
+        
+
+
+

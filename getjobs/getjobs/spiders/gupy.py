@@ -92,7 +92,7 @@ class GupySpider(scrapy.Spider):
                 By.ID,'username')
             username.click()
             username.clear()
-            username.send_keys('guilherme.d.correa@live.com')
+            username.send_keys('user@user')
             
         except Exception as e:
             print(e)
@@ -103,7 +103,7 @@ class GupySpider(scrapy.Spider):
                 By.ID,'password-input')
             password.click()
             password.clear()
-            password.send_keys('Mudar@123ab')
+            password.send_keys('123')
             
         except Exception as e:
             print(e)

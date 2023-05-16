@@ -1,15 +1,13 @@
 # Automatize a busca por vagas e envio de curriculos
 
-#Gupy, Linkedin, emprega Campinas, Instagram
+# Gupy, Linkedin, emprega Campinas, Instagram
 
-#Iniciando projeto
+# Iniciando projeto
 
 #py -3 -m venv venv
 #venv/Scripts/activate
 #pip install -r requirements.txt
-
-
-# cd getjobs
+#cd getjobs
 #scrapy startproject getjobs
 #scrapy genspider emprecacampinas empregacampinas.com.br
 #scrapy crawl linkedin

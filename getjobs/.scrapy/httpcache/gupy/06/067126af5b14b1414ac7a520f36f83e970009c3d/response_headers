@@ -1,0 +1,11 @@
+Content-Length: 97426
+Server: nginx
+Date: Tue, 16 May 2023 10:38:47 GMT
+Content-Type: application/json
+Set-Cookie: last_candidate_auth_subdomain=login;OptanonConsent=isGpcEnabled=0&datestamp=Tue+May+16+2023+10%3A38%3A42+GMT%2B0000+(Coordinated+Universal+Time)&version=202303.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=86fb2758-4b10-4eab-8943-ca77dafca137&interactionCount=0&landingPath=https%3A%2F%2Flogin.gupy.io%2Fcandidates%2Fsignin&groups=C0001%3A1%2CC0002%3A0%2CC0003%3A0%2CC0004%3A0;_ga=GA1.3.428207953.1684233523;_gid=GA1.3.921130598.1684233523;gupy_locale=en;_gat=1;_hjSessionUser_809470=eyJpZCI6ImFlZDFkODM0LWE4NjQtNTk4Zi04NjNhLTk2YzRkMzUyYjE1YSIsImNyZWF0ZWQiOjE2ODQyMzM1MjU1NzQsImV4aXN0aW5nIjpmYWxzZX0=;_hjFirstSeen=1;_hjIncludedInSessionSample_809470=0;_hjSession_809470=eyJpZCI6IjcwYzNhNzE5LTQ0ZDktNDgwNC1iZGUwLTI3M2E2MTI5OTlkMyIsImNyZWF0ZWQiOjE2ODQyMzM1MjU1ODcsImluU2FtcGxlIjpmYWxzZX0=;_hjAbsoluteSessionInProgress=0
+Sops_Api_Credits: 1000
+Vary: Accept-Encoding
+X-Request-Id: 1b34b966-a14a-4aa8-9119-214362762741
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff

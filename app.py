@@ -56,8 +56,7 @@ def get_url():
         for jobs in job_urls:
             print(jobs.get_attribute("href"))
         
-        
-        
+ 
     search_job()
     get_page_items()
         

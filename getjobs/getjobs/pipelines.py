@@ -30,7 +30,6 @@ def mssq_datawharehouse():
     isolation_level="AUTOCOMMIT", future=True,fast_executemany=True)
     return engine
 
-
 class GetjobsPipeline:
     def process_item(self, item, spider):
         return item

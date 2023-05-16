@@ -71,7 +71,6 @@ class LinkedinSpider(scrapy.Spider):
             if lastCount==lenOfPage:
                 match=True
                 
-
     def parse(self, response) -> None:
         time.sleep(randoms(10))
         self.driver.implicitly_wait(3)

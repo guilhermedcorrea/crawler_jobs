@@ -98,9 +98,9 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 FAKEUSERAGENT_PROVIDERS = [
-    'scrapy_fake_useragent.providers.FakeUserAgentProvider',  # This is the first provider we'll try
-    'scrapy_fake_useragent.providers.FakerProvider',  # If FakeUserAgentProvider fails, we'll use faker to generate a user-agent string for us
-    'scrapy_fake_useragent.providers.FixedUserAgentProvider',  # Fall back to USER_AGENT value
+    'scrapy_fake_useragent.providers.FakeUserAgentProvider', 
+    'scrapy_fake_useragent.providers.FakerProvider',  
+    'scrapy_fake_useragent.providers.FixedUserAgentProvider', 
 ]
 
 
@@ -113,10 +113,10 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 DOWNLOADER_MIDDLEWARES = {
-    # ...
+   
     'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
     'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
-    # ...
+   
 }
 
 

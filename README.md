@@ -6,6 +6,7 @@
 #venv/Scripts/activate
 #pip install -r requirements.txt
 
-#scrapy startproject getjobs
+
 # cd getjobs
+#scrapy startproject getjobs
 #scrapy genspider emprecacampinas empregacampinas.com.br

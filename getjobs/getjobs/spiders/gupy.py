@@ -32,7 +32,6 @@ user_agent_list = [
 
 
 
-
 secret_key = 'keywords'
 
 SCRAPEOPS_API_KEY = secret_key

@@ -15,6 +15,12 @@ from dotenv import load_dotenv
 import os
 import urllib.parse
 from typing import Any
+import random
+
+
+def randoms(ranges):
+    ranges = random.randint(3, ranges)
+    return ranges
 
 
 secret_key = os.getenv('API_KEY')
@@ -25,7 +31,6 @@ def get_scrapeops_url(url):
     payload = {'api_key': secret_key, 'url': url, 'bypass': 'cloudflare'}
     proxy_url = 'https://proxy.scrapeops.io/v1/?' + urllib.parse.urlencode(payload)
     return proxy_url
-
 
 
 def get_headers_list():
@@ -74,7 +79,7 @@ class EmpregacampinasSpider(scrapy.Spider):
                 match=True
 
     def parse(self) -> None:
-       
+        time.sleep(randoms(10))
         self.driver.get('https://empregacampinas.com.br')
         
         self.driver.implicitly_wait(3)
@@ -90,6 +95,7 @@ class EmpregacampinasSpider(scrapy.Spider):
         
         
     def get_page_items(self) -> None:
+        time.sleep(randoms(10))
         self.scroll_page()
         
         job_urls = self.driver.find_elements(By.XPATH,'//*[@id="article"]/div/div[2]/div[2]/div/a')

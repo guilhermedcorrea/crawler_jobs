@@ -23,8 +23,6 @@ secret_key = os.getenv('API_KEY')
 #RETRY_ENABLED = False
 #COOKIES_ENABLED = False
 
-
-
 SCRAPEOPS_API_KEY = secret_key
 
 SCRAPEOPS_PROXY_ENABLED = True

@@ -15,6 +15,12 @@ from dotenv import load_dotenv
 import os
 import urllib.parse
 from typing import Any
+import random
+
+
+def randoms(ranges):
+    ranges = random.randint(3, ranges)
+    return ranges
 
 
 secret_key = os.getenv('API_KEY')
@@ -47,6 +53,7 @@ class LinkedinSpider(scrapy.Spider):
                             options=self.option)
         
     def start_requests(self) ->Any:
+        time.sleep(randoms(10))
         self.driver.implicitly_wait(3)
         header_list = get_headers_list()
         url = "https://www.linkedin.com/?trk=seo-authwall-base_nav-header-logo"
@@ -66,6 +73,7 @@ class LinkedinSpider(scrapy.Spider):
                 
 
     def parse(self, response) -> None:
+        time.sleep(randoms(10))
         self.driver.implicitly_wait(3)
         
         self.driver.get('https://www.linkedin.com/?trk=seo-authwall-base_nav-header-logo')

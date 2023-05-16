@@ -13,6 +13,13 @@ import requests
 from random import randint
 from dotenv import load_dotenv
 import os
+import random
+
+def randoms(ranges):
+    ranges = random.randint(3, ranges)
+    return ranges
+
+
 
 
 secret_key = os.getenv('API_KEY')

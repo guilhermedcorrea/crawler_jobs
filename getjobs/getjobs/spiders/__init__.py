@@ -96,5 +96,3 @@ class Spider(object_ref):
 # Top-level imports
 
 from getjobs.spiders.empregacampinas import EmpregacampinasSpider
-
-from getjobs.spiders.linkedin import LinkedinSpider

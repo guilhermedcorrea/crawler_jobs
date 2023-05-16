@@ -65,7 +65,7 @@ class EmpregacampinasSpider(scrapy.Spider):
             if lastCount==lenOfPage:
                 match=True
 
-    def parse(self, response):
+    def parse(self):
        
         self.driver.get('https://empregacampinas.com.br')
         
@@ -91,6 +91,3 @@ class EmpregacampinasSpider(scrapy.Spider):
         
 
         
-
-
-

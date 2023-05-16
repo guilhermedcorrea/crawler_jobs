@@ -1,0 +1,11 @@
+Server: nginx
+Date: Tue, 16 May 2023 09:26:32 GMT
+Content-Type: text/html; charset=utf-8
+Set-Cookie: JSESSIONID=ajax:4310206334020143367; SameSite=None; Path=/; Domain=.www.linkedin.com; Securelang=v=2&lang=tr-tr; SameSite=None; Path=/; Domain=linkedin.com; Secure;bcookie="v=2&eb587926-0b30-4215-8c5e-046b08710989"; domain=.linkedin.com; Path=/; Secure; Expires=Wed, 15-May-2024 09:26:32 GMT; SameSite=None;bscookie="v=1&20230516092632cfeab9b5-528d-48de-8540-fc56a1d4bcd8AQFrvLfy_hBc_Tb5IyKZa7nvfTGNJuAi"; domain=.www.linkedin.com; Path=/; Secure; Expires=Wed, 15-May-2024 09:26:32 GMT; HttpOnly; SameSite=None;lidc="b=VGST06:s=V:r=V:a=V:p=V:g=2672:u=1:x=1:i=1684229192:t=1684315592:v=2:sig=AQESOJL2x95OyhLNE_B_eJ2aD7QaiEKk"; Expires=Wed, 17 May 2023 09:26:32 GMT; domain=.linkedin.com; Path=/; SameSite=None; Secure;
+Sops_Api_Credits: 7000
+Vary: Accept-Encoding
+X-Request-Id: 376c476a-5eb2-4a27-ac25-c54ad5bb5d87
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip

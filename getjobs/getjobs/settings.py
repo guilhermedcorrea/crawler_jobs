@@ -1,3 +1,4 @@
+import os
 # Scrapy settings for getjobs project
 #
 # For simplicity, this file contains only settings considered important or
@@ -53,6 +54,22 @@ ROBOTSTXT_OBEY = True
 #DOWNLOADER_MIDDLEWARES = {
 #    "getjobs.middlewares.GetjobsDownloaderMiddleware": 543,
 #}
+
+
+SCRAPEOPS_API_KEY = os.getenv('API_KEY')
+SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
+
+DOWNLOADER_MIDDLEWARES = {
+    'getjobs.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
+}
+
+
+SCRAPEOPS_PROXY_ENABLED = True
+SCRAPEOPS_PROXY_SETTINGS = {'country': 'us'}
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

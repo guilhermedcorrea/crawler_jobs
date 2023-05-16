@@ -12,7 +12,7 @@
 
 # Criando e iniciando um novo Spyder
 #<b>scrapy genspider emprecacampinas empregacampinas.com.br</b>
-#<b>scrapy crawl linkedin</b>
+#<b>scrapy crawl gupy</b>
 
 
 

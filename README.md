@@ -10,3 +10,4 @@
 # cd getjobs
 #scrapy startproject getjobs
 #scrapy genspider emprecacampinas empregacampinas.com.br
+#scrapy crawl linkedin

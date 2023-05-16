@@ -13,7 +13,7 @@ database_mssql = os.getenv('serverdatabase')
 host_mssql = os.getenv('serverhost')
 
 
-def mssq_datawharehouse():
+def mssql_jobs():
     connection_url = URL.create(
             "mssql+pyodbc",
             username=f"{user_mssql}",

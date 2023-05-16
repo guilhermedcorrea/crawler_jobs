@@ -23,7 +23,7 @@ def randoms(ranges):
     return ranges
 
 
-secret_key = os.getenv('API_KEY')
+secret_key = os.getenv('secret_key')
 
 SCRAPEOPS_API_KEY = secret_key
 
@@ -66,19 +66,34 @@ class GupySpider(scrapy.Spider):
         
         self.driver.get("https://login.gupy.io/candidates/signin")
         
-        click = self.driver.find_element(
-            By.XPATH,'/html/body/div[1]/div/div[3]/div/div[1]/div[3]/button[1]/span[1]/div/span[1]').click()
-        time.sleep(1)
         
-        username = self.driver.find_element(
-            By.XPATH,'/html/body/div[1]/div/div[3]/div/div[1]/form/div[1]/div/input')
-        username.click()
-        username.clear()
+        try:
+            click = self.driver.find_element(
+                By.XPATH,'/html/body/div[1]/div/div[3]/div/div[1]/div[3]/button[1]/span[1]/div/span[1]').click()
+            time.sleep(1)
+        except Exception as e:
+            print(e)
+            
+        try:
+            username = self.driver.find_element(
+                By.ID,'username')
+            username.click()
+            username.clear()
+            username.send_keys('')
+            
+        except Exception as e:
+            print(e)
+
+        try:
+            password = self.driver.find_element(
+                By.ID,'password-input')
+            password.click()
+            password.clear()
+            password.send_keys('')
+            
+        except Exception as e:
+            print(e)
         
-        password = self.driver.find_element(
-            By.XPATH,'/html/body/div[1]/div/div[3]/div/div[1]/form/div[2]/div/div/input')
-        password.click()
-        password.clear()
         
-        
+     
 

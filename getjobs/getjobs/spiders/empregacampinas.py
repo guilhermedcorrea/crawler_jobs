@@ -13,11 +13,17 @@ import requests
 from random import randint
 from dotenv import load_dotenv
 import os
-
+import urllib.parse
 
 secret_key = os.getenv('API_KEY')
 
 SCRAPEOPS_API_KEY = secret_key
+
+def get_scrapeops_url(url):
+    payload = {'api_key': secret_key, 'url': url, 'bypass': 'cloudflare'}
+    proxy_url = 'https://proxy.scrapeops.io/v1/?' + urllib.parse.urlencode(payload)
+    return proxy_url
+
 
 
 def get_headers_list():
@@ -50,7 +56,7 @@ class EmpregacampinasSpider(scrapy.Spider):
     def start_requests(self):
         header_list = get_headers_list()
         url = "https://empregacampinas.com.br"
-        yield scrapy.Request(url=url, callback=self.parse,headers=get_random_header(header_list))
+        yield scrapy.Request(url=get_scrapeops_url(url), callback=self.parse,headers=get_random_header(header_list))
         
          
     def scroll_page(self) -> None:

@@ -14,23 +14,25 @@ from random import randint
 from dotenv import load_dotenv
 import os
 import urllib.parse
+from typing import Any
+
 
 secret_key = os.getenv('API_KEY')
 
 SCRAPEOPS_API_KEY = secret_key
 
 
-def get_scrapeops_url(url):
+def get_scrapeops_url(url) -> str:
     payload = {'api_key': secret_key, 'url': url, 'bypass': 'cloudflare'}
     proxy_url = 'https://proxy.scrapeops.io/v1/?' + urllib.parse.urlencode(payload)
     return proxy_url
 
-def get_headers_list():
+def get_headers_list() -> Any:
   response = requests.get('http://headers.scrapeops.io/v1/browser-headers?api_key=' + SCRAPEOPS_API_KEY)
   json_response = response.json()
   return json_response.get('result', [])
 
-def get_random_header(header_list):
+def get_random_header(header_list) -> Any:
   random_index = randint(0, len(header_list) - 1)
   return header_list[random_index]
 
@@ -39,16 +41,16 @@ class LinkedinSpider(scrapy.Spider):
     allowed_domains = ["linkedin.com"]
     start_urls = ["https://linkedin.com"]
     handle_httpstatus_list = [404]
-    def __init__(self):
+    def __init__(self) -> None:
         self.option = webdriver.ChromeOptions()
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), 
                             options=self.option)
         
-    def start_requests(self):
+    def start_requests(self) ->Any:
         self.driver.implicitly_wait(3)
         header_list = get_headers_list()
         url = "https://www.linkedin.com/?trk=seo-authwall-base_nav-header-logo"
-        yield scrapy.Request(url=get_scrapeops_url(url), callback=self.parse)
+        yield scrapy.Request(url=get_scrapeops_url(url), callback=self.parse,headers=get_random_header(header_list))
 
     def scroll_page(self) -> None:
         lenOfPage = self.driver.execute_script(
@@ -63,7 +65,7 @@ class LinkedinSpider(scrapy.Spider):
                 match=True
                 
 
-    def parse(self, response):
+    def parse(self, response) -> None:
         self.driver.implicitly_wait(3)
         
         self.driver.get('https://www.linkedin.com/?trk=seo-authwall-base_nav-header-logo')

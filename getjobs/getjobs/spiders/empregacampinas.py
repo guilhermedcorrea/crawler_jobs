@@ -14,6 +14,8 @@ from random import randint
 from dotenv import load_dotenv
 import os
 import urllib.parse
+from typing import Any
+
 
 secret_key = os.getenv('API_KEY')
 
@@ -48,12 +50,12 @@ class EmpregacampinasSpider(scrapy.Spider):
         }
     }
     
-    def __init__(self):
+    def __init__(self) -> None:
         self.option = webdriver.ChromeOptions()
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), 
                             options=self.option)
         
-    def start_requests(self):
+    def start_requests(self) -> Any:
         header_list = get_headers_list()
         url = "https://empregacampinas.com.br"
         yield scrapy.Request(url=get_scrapeops_url(url), callback=self.parse,headers=get_random_header(header_list))
@@ -71,7 +73,7 @@ class EmpregacampinasSpider(scrapy.Spider):
             if lastCount==lenOfPage:
                 match=True
 
-    def parse(self):
+    def parse(self) -> None:
        
         self.driver.get('https://empregacampinas.com.br')
         
@@ -87,7 +89,7 @@ class EmpregacampinasSpider(scrapy.Spider):
             By.XPATH,'/html/body/header/div/div[2]/form/input').click()
         
         
-    def get_page_items(self):
+    def get_page_items(self) -> None:
         self.scroll_page()
         
         job_urls = self.driver.find_elements(By.XPATH,'//*[@id="article"]/div/div[2]/div[2]/div/a')

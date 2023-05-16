@@ -4,15 +4,15 @@
 
 # Iniciando projeto
 
-<b>py -3 -m venv venv</b>
-<b>venv/Scripts/activate</b>
-<b>pip install -r requirements.txt</b>
-<b>cd getjobs</b>
-<b>scrapy startproject getjobs</b>
+#py -3 -m venv venv
+#venv/Scripts/activate
+#pip install -r requirements.txt
+#cd getjobs
+#scrapy startproject getjobs
 
-#Criando e iniciando um novo Spyder
-<b>scrapy genspider emprecacampinas empregacampinas.com.br</b>
-<b>scrapy crawl linkedin</b>
+# Criando e iniciando um novo Spyder
+#<b>scrapy genspider emprecacampinas empregacampinas.com.br</b>
+#<b>scrapy crawl linkedin</b>
 
 
 

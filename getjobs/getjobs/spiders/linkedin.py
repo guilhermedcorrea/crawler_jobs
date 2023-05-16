@@ -54,7 +54,6 @@ class LinkedinSpider(scrapy.Spider):
         url = "https://linkedin.com"
         yield scrapy.Request(url=url, callback=self.parse,headers=get_random_header(header_list))
     
-    
 
     def parse(self, response):
-        pass
+        self.driver.get('https://linkedin.com')
